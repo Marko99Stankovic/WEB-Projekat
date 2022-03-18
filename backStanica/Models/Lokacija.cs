@@ -31,7 +31,7 @@ namespace backStanica.Models
         //pokazivac na Stanica klasu
         public Stanica Stanica {get;set;}
 //---
-        // public Korisnik Korisnik {get;set;}
+       //  public Korisnik Korisnik {get;set;}
         public virtual List<Korisnik> Korisnici {get;set;}
 
         public virtual List<Vozilo> Vozila {get;set;}

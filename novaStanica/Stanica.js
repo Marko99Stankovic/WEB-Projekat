@@ -15,7 +15,7 @@ export class Stanica{
     crtajStanicu(host){
         if(!host)
         throw new Exception("roditeljski element ne postoji");
-    // PRAVI SE KONTEJNER
+    
         this.kontejner=document.createElement("div");                                                        
         this.kontejner.classList.add("kontejner");  
             host.appendChild(this.kontejner);                                                      
@@ -82,20 +82,22 @@ export class Stanica{
                 kontForma.appendChild(txbx);
             });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        //KOLICINA
-                elLabela = document.createElement("label");
-                elLabela.innerHTML="Moguće je rezervisati mesto samo za jedno vozilo.";
-                kontForma.appendChild(elLabela)
-                //input polje za unos
-                let tb= document.createElement("input");
-                tb.className="kolicina";
-                tb.type="number";
-                tb.value=1;
-                tb.style.display='none';        //krije textBox
-                kontForma.appendChild(tb);   
-     opcija=null;
-     labela=null;
-     divRb= null;  
+                    //KOLICINA
+            elLabela = document.createElement("label");
+            elLabela.innerHTML="Odaberite koordinate parking mesta:";
+            kontForma.appendChild(elLabela)
+            //input polje za unos
+            let tb= document.createElement("input");
+            tb.className="kolicina";
+            tb.type="number";
+            tb.value=1;
+            tb.style.display='none';        //krije textBox
+            kontForma.appendChild(tb); 
+
+                opcija=null;
+                labela=null;
+                divRb= null;  
+
     // za X
     divRb = document.createElement("div"); 
     let selX = document.createElement("select"); //select element za X
@@ -129,7 +131,7 @@ export class Stanica{
     dugme.innerHTML="Zauzmi lokaciju";
     kontForma.appendChild(dugme);
     dugme.onclick=(ev)=>{
-       //pokupi elemente koje je korisnik uneo za vrstu  brojTelefona
+      
     //VRATI OVO------------------------------------------------------------------------------------------------------------------------88     
         const imeKorisnika = this.kontejner.querySelector(".imeKorisnika").value; //pokupi ono sto ima className="imeKorisnika"
         const prezKorisnika =this.kontejner.querySelector(".prezKorisnika").value;
@@ -152,15 +154,15 @@ export class Stanica{
                 let provera=this.lokacije.find(lok=>lok.imeKorisnika==imeKorisnika && lok.prezKorisnika==prezKorisnika && lok.brojTelefona==brojTelefona)
 
 
-                if(provera)
+                if(provera ||this.brojTelefona==brojTelefona)
                     alert("Korisnik "+imeKorisnika+" "+prezKorisnika+" je vec rezervisao parking mesto. Moguce je rezervisati jedno parking mesto po korisniku! ")
                 else
             //sustina:
                 this.lokacije[x*this.n+y]
                     .azurirajLokaciju( this.id,imeKorisnika, prezKorisnika, brojTelefona, kolicina, tip.value, modelVozila, Registarska,  x, y );
                     console.log(Stanica);
-
-
+                    
+                this.ClearFields();
 
 //------------TEst-----------------------------------------------------------88
      //      fetch("https://localhost:5001/Stanica/UpisiLokacije" +this.id, { //
@@ -214,10 +216,9 @@ export class Stanica{
         const modelVozila=this.kontejner.querySelector(".modelVozila").value;
         const Registarska=this.kontejner.querySelector(".klasaRegOznake").value;
         const kolicina = parseInt( this.kontejner.querySelector(".kolicina").value);
-         let x=parseInt(selX.value);
-         let y=parseInt(selY.value);
-        
-        this.ClearFields();
+            let x=parseInt(selX.value);
+            let y=parseInt(selY.value);
+   
 
         this.lokacije[x*this.n+y]
             .obrisiLokaciju(imeKorisnika, prezKorisnika, brojTelefona, kolicina, tip.value, modelVozila, Registarska,  x, y );            
@@ -232,23 +233,15 @@ export class Stanica{
         //---------------------------------------------------------------------------------------------------------------------------- T E S T
 }
 
-//test------------------------------------------------------------------------------test
 ClearFields() {
 
     document.querySelector(".imeKorisnika").value = "";
     document.querySelector(".prezKorisnika").value = "";
     document.querySelector(".brojTelefona").value="";
-    
     document.querySelector(".modelVozila").value = "";
     document.querySelector(".klasaRegOznake").value = "";
     document.querySelector(".kolicina").value = "";
 }
-
-
-//test------------------------------------------------------------------------------test
-
-
-
 
 crtajLokacije(host){                                               
     const kontLokacije = document.createElement("div");

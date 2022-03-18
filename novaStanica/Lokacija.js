@@ -40,8 +40,8 @@ dodajVozilo(vehicle){
         if(kolicina+this.kapacitet > this.Maxkapacitet)
             alert("Ovo mesto je zauzeto!");
         else{
-           
             console.log(kolicina);
+            
             this.imeKorisnika=imeKorisnika;
             this.prezKorisnika=prezKorisnika;
             this.brojTelefona=brojTelefona;
@@ -49,6 +49,7 @@ dodajVozilo(vehicle){
             this.modelVozila=modelVozila;
             this.Registarska=Registarska;
             this.kapacitet+=kolicina;   //max 1-vozilo 1-korisnik
+
 //------------------------------------------------------------------------Vrati
            //    let kor = new Korisnik(this.imeKorisnika, this.prezKorisnika, this.brojTelefona);
            //    this.dodajKorisnika(kor);
@@ -76,58 +77,43 @@ dodajVozilo(vehicle){
    //          });
    //      });
    //  });
-          
 
-
-
-
-
-
+//----------------------------------------------------------------------------------------------------------
 
                 let voz= new Vozilo(this.tip, this.modelVozila,this.Registarska);
                 this.dodajVozilo(voz);
                 voz.crtajVozilo(this.miniKontejner);
+ 
+                //fetch("https://localhost:5001/Stanica/UpisiVozilo").then(p=>{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                //   p.json().then(data=>{
+                //       //var vozila = [];
+                //       var tmp2=x*this.n+y;
+                //       var brel =0;
+                //   data.forEach(voz=>{
+                //   let voz1=new Vozilo (voz.tip, voz.modelVozila, voz.Registarska);           
+                //           korisnici[brel++]=voz.tmp2;
+                //           this.dodajVozilo(voz1);
+                //           voz1.crtajKorisnika(this.miniKontejner); 
+                //       });
+                //   });
+                //);
 
 
 
 
             //test----------------------------------------------------test
                 this.miniKontejner.style.backgroundColor=this.vratiBoju(); 
-            
-
-
-             //test----------------------------------------------------test Model
                 let tipV;               
                 if(tip=="green"){
                     tipV="Putnicko vozilo"
                 }else if(tip=="yellow"){
                     tipV="Motocikl"
                 }
-            //test----------------------------------------------------test
 
             const racun=document.createElement("button");
             racun.classList="btn";
-            racun.innerHTML="Prikazi cenu dnevne rezervacije"
+            racun.innerHTML="Prikaži cenu dnevne rezervacije"
             this.miniKontejner.appendChild(racun);
             racun.onclick=(ev)=>{
                 if(tipV==="Putnicko vozilo")
@@ -142,11 +128,10 @@ dodajVozilo(vehicle){
   
   
     obrisiLokaciju( id,imeKorisnika, prezKorisnika, brojTelefona, kolicina, tip, modelVozila, Registarska,  x, y ){
-                                    // ovde default slicica izgleda lokacije
           this.imeKorisnika="";
           this.prezKorisnika="";
           this.brojTelefona=""
-          this.tip=this.vratiBoju();//null ili sta je vec defaultno
+          this.tip=this.vratiBoju();
           this.modelVozila="";
           this.Registarska="";
           this.kapacitet--;
@@ -175,13 +160,10 @@ dodajVozilo(vehicle){
  //      }).catch(err=>{
  //          console.log(err);
  //      });
-//
-            //--------------------------------------------------------------------------------------
     }          
 
 
 
-
-////
+//END Klase Lokacija
 }
 

@@ -69,10 +69,6 @@ namespace backStanica.Controllers
         }
 //-----------------------------------------------------v10
 
-
-
-
-
 //----------------------------------------------------------------------------------------T E S T
         [Route("IzmeniLokaciju/{idStanice}")]
         [HttpPut]
@@ -161,40 +157,10 @@ namespace backStanica.Controllers
     }
 
 
-//----------------------------------------------------------------------------------------T E S T
-// V R A T I  O V O:
 
-  //[Route("UpisiKorisnika/{idLokacije}")]
-  // [HttpPost]
-  // public async Task UpisiKorisnika(int idLokacije, [FromBody] Korisnik korisnik)
-  // {
-  //      var lokacija = await Context.Lokacije.FindAsync(idLokacije);
-  //         korisnik.Lokacija=lokacija;
-  //         Context.Korisnici.Add(korisnik);
-  //         await Context.SaveChangesAsync();
-  // }
-  // [Route("PreuzmiKorisnika/{idStanice}")]    
-  // [HttpGet]
-  // public async Task<List<Lokacija>> PreuzmiKorisnika() 
-  // {
-  //     return await Context.Lokacije.Include(p=>p.Korisnici).ToListAsync();
-  // }
-  // [Route("IzmeniKorisnika/{idLokacije}")]
-  // [HttpPut]
-  // public async Task IzmeniKorisnika(int idLokacije, [FromBody] Korisnik korisnik)
-  // {
-  //     Context.Update<Korisnik>(korisnik);
-  //     await Context.SaveChangesAsync();
-  // }
-  // [Route("ObrisiKorisnika/{idKorisnika}")]
-  // [HttpDelete]
-  // public async Task ObrisiKorisnika(int idKorisnika)
-  // {
-  //     var korisnik = await Context.Korisnici.FindAsync(idKorisnika);
-  //     Context.Remove(korisnik);
-  //     await Context.SaveChangesAsync();
-  // }
-//----------------------------------------------------------------------------------------T E S T
+
+
+
 
     }
 }

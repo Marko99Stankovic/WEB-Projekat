@@ -27,8 +27,5 @@ namespace backStanica.Models
        [JsonIgnore]
        public Lokacija Lokacija { get; set; }
        
-
-    //    public Korisnik Korisnik { get; set; }
-
     }
 }
