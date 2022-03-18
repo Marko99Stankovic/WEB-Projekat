@@ -1,0 +1,84 @@
+.kontejner{
+    display:flex;
+    flex-direction: row;
+    background-color: rgba( 2, 240, 250);
+    box-shadow: 0 0 5px 4px rgb(8, 255, 255);
+}
+.kontForma{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis:200px;   
+}
+.kontLokacije{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgb(89, 88, 88);
+}
+.red{
+    display: flex;
+    flex-grow: 1;  
+    flex-wrap: wrap;
+}
+.lok{
+   
+    flex:1 1 10px;
+    margin: 5px;
+    
+    flex-direction: column;
+    text-align: center;
+    
+    color: black;
+}
+*{
+    margin-top: 2px;
+    font-family:'Indie Flower',cursive;
+    padding: 2px;
+}
+.kontForma
+{
+    background-color: rgb(1, 255, 255);
+}
+.divUser
+{
+    background-color: #3E7a;
+}
+.kontVozila
+{
+    background-color: rgba(3, 255, 242, 0.337);
+}
+.miniVozilo
+{
+    background-color: rgb(102, 250, 16);
+    flex:1 1 10px;
+    margin: 5px;
+    box-shadow: 0 0 5px 2px rgb(8, 206, 255);
+}
+.kontKorisnik
+{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: rgb(7, 201, 214);
+    box-shadow: 0 0 5px 3px rgb(24, 176, 232);
+    margin: 1%;
+    
+}
+.brojTelefona{
+    color: red;
+}
+.btn
+{
+    margin: 2%;
+    background-color: rgb(153, 224, 82);
+    color: teal;
+    border-radius: 0%;
+}
+.korisnikDiv
+{
+    display: flex;
+    background-color: aqua;
+}
+
